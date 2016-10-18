@@ -16,6 +16,7 @@ nsslapd-security: on
 
 replace: nsslapd-ssl-check-hostname
 nsslapd-ssl-check-hostname: off
+
 dn: cn=RSA,cn=encryption,cn=config
 changetype: add
 objectclass: top
