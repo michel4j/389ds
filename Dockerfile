@@ -5,7 +5,7 @@
 # docker build --rm --tag 389ds .
    
 FROM centos:7
-MAINTAINER michel.fodje@lightsource.ca
+MAINTAINER michel4j@gmail.com
 
 RUN yum -y install 389-ds-base.x86_64 openldap-clients \
            curl hostname procps-ng openssl nss-tools coreutils && \
