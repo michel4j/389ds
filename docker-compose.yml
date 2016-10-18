@@ -1,5 +1,5 @@
 ldap:
-  image: 389ds:latest
+  image: minkwe/389ds:latest
   hostname: ldap.example.com
   volumes:
     - ./data:/var/lib/dirsrv:Z
