@@ -1,0 +1,13 @@
+[template]
+src = "init-users.ldif.tmpl"
+dest = "/init-users.ldif"
+keys = [
+    "/dir/admin/password",
+    "/dir/admin/username",
+    "/dir/admin/uid",
+    "/dir/suffix",
+    "/dir/users/home",
+    "/dir/users/shell"
+]
+
+

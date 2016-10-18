@@ -1,0 +1,28 @@
+
+dn: cn=encryption,cn=config
+changetype: modify
+replace: nsSSL3
+nsSSL3: off
+
+replace: nsSSLClientAuth
+nsSSLClientAuth: allowed
+
+add: nsSSL3Ciphers
+nsSSL3Ciphers: +all
+dn: cn=config
+changetype: modify
+add: nsslapd-security
+nsslapd-security: on
+
+replace: nsslapd-ssl-check-hostname
+nsslapd-ssl-check-hostname: off
+dn: cn=RSA,cn=encryption,cn=config
+changetype: add
+objectclass: top
+objectclass: nsEncryptionModule
+cn: RSA
+nsSSLPersonalitySSL: Server-Cert
+nsSSLToken: internal (software)
+nsSSLActivation: on
+
+

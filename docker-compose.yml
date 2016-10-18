@@ -1,0 +1,19 @@
+ldap:
+  image: 389ds:latest
+  hostname: ldap.example.com
+  volumes:
+    - ./data:/var/lib/dirsrv:Z
+    - ./config:/etc/dirsrv:Z
+    - ./logs:/var/log/dirsrv:Z
+    - ./certs:/certs:Z
+  environment:
+    DIR_SUFFIX: dc=example,dc=lan
+    DIR_ADMIN_USERNAME: "myadmin"
+    DIR_MANAGER_PASSWORD: "Admin123"
+    DIR_ADMIN_UID: "15000"
+    DIR_USERS_HOME: "/users"
+  ports:
+    - 389:389
+    - 636:636
+  restart: always
+

@@ -1,0 +1,7 @@
+# Map certificate CN to user DN
+certmap    {{getv "/dir/hostname"}}     {{getv "/dir/suffix"}}
+{{getv "/dir/hostname"}}:DNComps
+{{getv "/dir/hostname"}}:FilterComps    cn
+{{getv "/dir/hostname"}}:verifycert     on
+
+

@@ -1,0 +1,8 @@
+[template]
+src = "certmap.conf.tmpl"
+dest = "/certmap.conf"
+keys = [
+    "/dir/suffix",
+    "/dir/hostname"
+]
+

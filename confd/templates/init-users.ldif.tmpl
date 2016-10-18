@@ -1,0 +1,27 @@
+
+# Group
+dn: cn={{getv "/dir/admin/username"}},ou=Groups,{{getv "/dir/suffix"}}
+objectClass: top
+objectClass: groupOfUniqueNames
+objectClass: posixGroup
+gidNumber: {{getv "/dir/admin/uid"}}
+
+# User
+dn: uid={{getv "/dir/admin/username"}},ou=People,{{getv "/dir/suffix"}}
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+objectClass: shadowAccount
+cn: {{getv "/dir/admin/username"}}
+uid: {{getv "/dir/admin/username"}}
+uidNumber: {{getv "/dir/admin/uid"}}
+gidNumber: {{getv "/dir/admin/uid"}}
+homeDirectory: {{getv "/dir/users/home"}}/{{getv "/dir/admin/username"}}
+loginShell: {{getv "/dir/users/shell"}}
+gecos: Administrator
+userPassword: {{getv "/dir/admin/password"}}
+shadowLastChange: 0
+shadowMax: 0
+shadowWarning: 0
+
+

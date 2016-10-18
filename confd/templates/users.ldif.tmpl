@@ -1,0 +1,27 @@
+
+# Group
+dn: cn=bladmin,ou=Groups,{{getv "/dir/suffix"}}
+objectClass: top
+objectClass: groupOfUniqueNames
+objectClass: posixGroup
+gidNumber: 15000
+
+# User
+dn: uid=bladmin,ou=People,{{getv "/dir/suffix"}}
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+objectClass: shadowAccount
+cn: bladmin
+uid: bladmin
+uidNumber: 15000
+gidNumber: 15000
+homeDirectory: {{getv "/dir/users/home"}}/bladmin
+loginShell: {{getv "/dir/users/shell"}}
+gecos: bladmin
+userPassword: {{getv "/dir/admin/password"}}
+shadowLastChange: 0
+shadowMax: 0
+shadowWarning: 0
+
+
