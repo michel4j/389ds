@@ -12,6 +12,27 @@ persistence  support through volumes and easy management of server certificates.
 The best way to use the image is with docker-compose by adapting the sample 
 'docker-compose.yml' file.
 
+    ldap:
+      image: 389ds:latest
+      hostname: ldap.example.com
+      volumes:
+        - ./data:/var/lib/dirsrv:Z
+        - ./config:/etc/dirsrv:Z
+        - ./logs:/var/log/dirsrv:Z
+        - ./certs:/certs:Z
+      environment:
+        DIR_SUFFIX: dc=example,dc=lan
+        DIR_ADMIN_USERNAME: "myadmin"
+        DIR_MANAGER_PASSWORD: "Admin123"
+        DIR_ADMIN_UID: "15000"
+        DIR_USERS_HOME: "/users"
+      ports:
+        - 389:389
+        - 636:636
+      restart: always
+
+Then run the service with
+
     docker-compose up
 
 # Environment Variables
@@ -37,9 +58,9 @@ To preserve configuration and data between restarts and recreating the container
 /var/log/dirsrv - logs. Must be empty initially
 /certs - Certificate import directory. The image expects to find the following files in this directory
 
-    -  `server.key`:  X509 Private Key file in PEM format (mandatory)
-    -  `server.crt`:  X509 Certificate file in PEM format (mandatory)
-    -  `ca.pem`:   Public key of the Certificate Authority who signed the server certificate in PEM format (optional). For TLS, Make sure ca.pem is recognized by the client
+    -  server.key:  X509 Private Key file in PEM format (mandatory)
+    -  server.crt:  X509 Certificate file in PEM format (mandatory)
+    -  ca.pem:   Public key of the Certificate Authority who signed the server certificate in PEM format (optional). For TLS, Make sure ca.pem is recognized by the client
 
 To update certificate and key files just replace those with new ones and restart the container.  
 
