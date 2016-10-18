@@ -18,7 +18,7 @@ RUN curl -qL https://github.com/kelseyhightower/confd/releases/download/v0.11.0/
 COPY init-ssl.ldif          /init-ssl.ldif
 COPY confd                  /etc/confd
 
-VOLUME ["/etc/dirsrv", "/var/lib/dirsrv", "/var/log/dirsrv"]
+VOLUME ["/etc/dirsrv", "/var/lib/dirsrv", "/var/log/dirsrv", "/certs"]
 
 # The 389-ds setup will fail because the hostname can't reliable be determined, 
 # so we'll bypass it and then install.
