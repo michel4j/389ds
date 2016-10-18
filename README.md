@@ -68,9 +68,8 @@ To preserve configuration and data between restarts and recreating the container
 <dt>/var/log/dirsrv</dt>
 <dd>location where logs will be stored. Must be empty initially</dd>
 <dt>/certs</dt>
-<dd>Certificate import directory. The image expects to find the following files in this directory</dd>
-</dl>
-    <dl>
+<dd>Certificate import directory. The image expects to find the following files in this directory
+<dl>
     server.key
     <dd>X509 Private Key file in PEM format (mandatory)</dd>
     server.crt
@@ -79,11 +78,10 @@ To preserve configuration and data between restarts and recreating the container
     <dd>Public key of the Certificate Authority who signed the server certificate in PEM format (optional). For TLS, Make 
     sure ca.pem is recognized by the client</dd>
     </dl>
-
-To update certificate and key files just replace those with new ones and restart the container.  
-
-
-
+    To update certificate and key files just replace those with new ones and restart the container.  
+</dd>
+</dl>
+    
 # Testing
 
     ldapsearch -x -ZZ -h localhost -D "cn=Directory Manager" -b "dc=example,dc=com" -W
