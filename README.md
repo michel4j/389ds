@@ -70,11 +70,11 @@ To preserve configuration and data between restarts and recreating the container
 <dt>/certs</dt>
 <dd>Certificate import directory. The image expects to find the following files in this directory
 <dl>
-    server.key
+<dt>server.key</dt>
     <dd>X509 Private Key file in PEM format (mandatory)</dd>
-    server.crt
+    <dt>server.crt</dt>
     <dd>X509 Certificate file in PEM format (mandatory)</dd>
-    ca.pem
+    <dt>ca.pem</dt>
     <dd>Public key of the Certificate Authority who signed the server certificate in PEM format (optional). For TLS, Make 
     sure ca.pem is recognized by the client</dd>
     </dl>
