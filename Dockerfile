@@ -34,6 +34,6 @@ RUN mkdir /etc/dirsrv-tmpl && mv /etc/dirsrv/* /etc/dirsrv-tmpl
 
 EXPOSE 389 636
 
-COPY run_server.sh          /run_server.sh
+COPY run_server.sh /run_server.sh
 	
 CMD ["/run_server.sh"]
