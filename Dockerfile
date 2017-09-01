@@ -43,5 +43,6 @@ COPY supervisord.conf /etc/supervisor/supervisord.conf
 
 COPY run_server.sh /run_server.sh
 COPY start.sh /start.sh
+COPY dirsrv-dir /etc/systemctl/dirsrv-dir
 	
 CMD ["/start.sh"]
