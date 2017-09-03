@@ -100,7 +100,10 @@ else
 fi
 
 
-exec /usr/sbin/ns-slapd -D ${BASEDIR} -d 0
+# remove stray lockfiles
+rm -f /var/lock/dirsrv/slapd-dir/server/*
+
+exec /usr/sbin/ns-slapd -D ${BASEDIR} -d 16384
 
 #/usr/sbin/ns-slapd -D ${BASEDIR} && tail -F $LOGDIR/{access,errors} --max-unchanged-stats=5
 

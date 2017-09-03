@@ -1,0 +1,8 @@
+# configuration for cli-tools (eg. ldif2db)
+SERVER_DIR=/usr/lib64/dirsrv
+SERVERBIN_DIR=/usr/sbin
+CONFIG_DIR=/etc/dirsrv/slapd-dir
+INST_DIR=/usr/lib64/dirsrv/slapd-dir
+RUN_DIR=/var/run/dirsrv
+DS_ROOT=
+PRODUCT_NAME=slapd
